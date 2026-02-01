@@ -132,7 +132,7 @@ const Projects = () => {
           >
             <div className="project-card">
               <div className="project-image">
-                <img src={project.image} alt={project.title} />
+                <img src={project.image} alt={project.title} loading="lazy" />
               </div>
               <div className="project-content">
                 <div className="project-category">

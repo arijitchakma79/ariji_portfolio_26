@@ -76,8 +76,10 @@
     margin: 0;
 }
 
+/* Hide art-info on touch devices (no hover); keep overlay only for hover-capable devices */
 @media (hover: none) {
     .art-info {
-        opacity: 1;
+        opacity: 0;
+        pointer-events: none;
     }
 }

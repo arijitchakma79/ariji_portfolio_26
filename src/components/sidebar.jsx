@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
-import { Home, FileText, Boxes, Palette, Sun, Moon, Instagram, Linkedin, Github, Twitter, Menu, X } from 'lucide-react';
-import { useTheme } from '../contexts/ThemeContext';
-import profileImg from '../assets/profile_pic.JPG';
+import { Home, FileText, Boxes, Palette, Sun, Moon, Instagram, Linkedin, Github, Twitter, Menu, X, Droplets, Check } from 'lucide-react';
+import { useTheme, ACCENT_OPTIONS } from '../contexts/ThemeContext';
+import profileImg from '../assets/profile_pic.jpg';
 import '../styles/sidebar.css';
 
 const Sidebar = () => {
@@ -10,7 +10,8 @@ const Sidebar = () => {
     const [activeSection, setActiveSection] = useState('about-section');
     const navigate = useNavigate();
     const location = useLocation();
-    const { theme, toggleTheme } = useTheme();
+    const { theme, toggleTheme, accent, setAccent } = useTheme();
+    const [colorPickerOpen, setColorPickerOpen] = useState(false);
 
     const navLinks = [
         { id: 'about-section', icon: <Home size={20} />, text: 'about' },
@@ -31,6 +32,7 @@ const Sidebar = () => {
 
     const closeMenu = () => {
         setIsOpen(false);
+        setColorPickerOpen(false);
     };
 
     useEffect(() => {
@@ -116,6 +118,37 @@ const Sidebar = () => {
                         <Palette size={20} />
                         <span className="nav-text">arts</span>
                     </NavLink>
+                    <button
+                        type="button"
+                        className={`nav-link ${colorPickerOpen ? 'active' : ''}`}
+                        onClick={() => { setColorPickerOpen((open) => !open); }}
+                        aria-label="Change accent color"
+                        aria-expanded={colorPickerOpen}
+                    >
+                        <Droplets size={20} />
+                        <span className="nav-text">color</span>
+                    </button>
+                    {colorPickerOpen && (
+                        <div className="accent-picker nav-link-size">
+                            <div className="accent-picker-body">
+                                <div className="accent-swatches">
+                                    {ACCENT_OPTIONS.map((opt) => (
+                                        <button
+                                            key={opt.id}
+                                            type="button"
+                                            className={`accent-swatch ${accent === opt.id ? 'active' : ''}`}
+                                            style={{ backgroundColor: opt.color }}
+                                            onClick={() => { setAccent(opt.id); }}
+                                            aria-label={`Set accent to ${opt.name}`}
+                                            title={opt.name}
+                                        >
+                                            {accent === opt.id && <Check className="accent-swatch-check" size={12} />}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    )}
                     <button
                         type="button"
                         className="nav-link"

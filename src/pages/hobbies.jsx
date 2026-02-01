@@ -20,9 +20,8 @@ const Hobbies = () => {
                 {arts.map((art) => (
                     <article key={art.id} className="art-card">
                         <div className="art-image-wrap">
-                            <img src={art.image} alt={art.title} className="art-image" />
+                            <img src={art.image} alt={art.title} className="art-image" loading="lazy" />
                             <div className="art-info">
-                                <h2 className="art-title">{art.title}</h2>
                                 <p className="art-meta">Made with {art.device} & {art.app}</p>
                             </div>
                         </div>

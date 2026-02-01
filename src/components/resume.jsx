@@ -7,7 +7,8 @@ import bmsLogo from '../assets/BMS.png';
 import developForGoodLogo from '../assets/develop_for_good_logo.jpg';
 import drexelCCILogo from '../assets/drexel_cci.jpg';
 import kbraLogo from '../assets/kbra.jpg';
-import drawsimImage from '../assets/drawsim-pd';
+// Add drawsim-pd.png (or .jpg) to src/assets and use: import drawsimImage from '../assets/drawsim-pd.png';
+const drawsimImage = null;
 
 const Resume = () => {
   return (
@@ -34,7 +35,7 @@ const Resume = () => {
             <h3>Bachelors in Computer Science</h3>
             <p className="subtitle">Drexel University, 2027</p>
           </div>
-          <img src={logo} alt="Drexel" className="company-logo-small" />
+          <img src={logo} alt="Drexel" className="company-logo-small" loading="lazy" />
         </div>
       </section>
 
@@ -89,7 +90,7 @@ const Resume = () => {
           className="publication-card-link"
         >
           <div className="item clickable-item publication-item">
-            <img src={drawsimImage} alt="DrawSim-PD overview" className="publication-image" />
+            {drawsimImage && <img src={drawsimImage} alt="DrawSim-PD overview" className="publication-image" loading="lazy" />}
             <div className="content">
               <h3 className="publication-title">
                 DrawSim-PD: Simulating Student Science Drawings to Support NGSS-Aligned Teacher
@@ -115,7 +116,7 @@ const Resume = () => {
             <h3>Incoming Software Engineer Intern</h3>
             <p className="subtitle">KBRA, April 2026 -  September 2026</p>
           </div>
-          <img src={kbraLogo} alt="KBRA" className="company-logo-small" />
+          <img src={kbraLogo} alt="KBRA" className="company-logo-small" loading="lazy" />
         </div>
         <div className="item">
           <Briefcase className="icon" size={20} />
@@ -143,7 +144,7 @@ const Resume = () => {
               Drexel University College of Computing & Informatics, September 2025 -  Present
             </p>
           </div>
-          <img src={drexelCCILogo} alt="Drexel CCI" className="company-logo-small" />
+          <img src={drexelCCILogo} alt="Drexel CCI" className="company-logo-small" loading="lazy" />
         </div>
         <div className="item">
           <Briefcase className="icon" size={20} />
@@ -159,7 +160,7 @@ const Resume = () => {
             <h3>Software Engineer</h3>
             <p className="subtitle">Develop For Good, May 2024 - August 2024</p>
           </div>
-          <img src={developForGoodLogo} alt="Develop For Good" className="company-logo-small" />
+          <img src={developForGoodLogo} alt="Develop For Good" className="company-logo-small" loading="lazy" />
         </div>
       </section>
 

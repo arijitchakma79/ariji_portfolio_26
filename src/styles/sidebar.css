@@ -16,8 +16,8 @@
 }
 
 .profile-image-container {
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     margin: 20px auto 30px;
     border-radius: 50%;
     overflow: hidden;
@@ -40,6 +40,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center;
     transition: transform 0.3s ease;
 }
 
@@ -56,7 +57,7 @@
     padding: 12px 15px;
     text-decoration: none;
     color: var(--text-secondary);
-    border-radius: 999px;
+    border-radius: 10px;
     transition: all 0.3s ease;
     font-weight: 500;
     background: transparent;
@@ -74,17 +75,6 @@
     background-color: var(--hover-color);
     color: var(--text-primary);
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02);
-}
-
-.nav-link.active::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 6px;
-    bottom: 6px;
-    width: 3px;
-    border-radius: 999px;
-    background-color: var(--accent-red);
 }
 
 .nav-link svg {
@@ -127,7 +117,7 @@
     align-items: stretch;
     gap: 8px;
     padding: 12px 15px;
-    border-radius: 999px;
+    border-radius: 10px;
     background: transparent;
     transition: background 0.25s ease;
 }
@@ -283,8 +273,8 @@
     }
 
     .profile-image-container {
-        width: 40px;
-        height: 40px;
+        width: 52px;
+        height: 52px;
         margin: 10px auto 20px;
         border-width: 2px;
     }
@@ -470,10 +460,6 @@
             inset 3px 0 0 0 var(--accent-red);
     }
 
-    .sidebar .nav-links .nav-link.active::before {
-        display: none;
-    }
-
     .sidebar .accent-picker-label {
         display: block;
     }
@@ -561,8 +547,8 @@
     }
 
     .profile-image-container {
-        width: 88px;
-        height: 88px;
+        width: 116px;
+        height: 116px;
         border: 3px solid transparent;
         background:
             linear-gradient(var(--sidebar-bg), var(--sidebar-bg)) padding-box,
