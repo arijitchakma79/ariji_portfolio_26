@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.96eafc3c.css",
-    "main.js": "/static/js/main.65d5addf.js",
+    "main.css": "/static/css/main.b026375b.css",
+    "main.js": "/static/js/main.5e7d2cde.js",
     "static/media/gojo.png": "/static/media/gojo.a0f491e7095df2cbf16a.png",
     "static/media/collegebuddy.png": "/static/media/collegebuddy.f6a5f630a5758cd888a4.png",
     "static/media/profile_pic.jpg": "/static/media/profile_pic.926e4cb62da9a14977c0.jpg",
+    "static/media/drawsim.jpg": "/static/media/drawsim.f62cadf53978e1a5a547.jpg",
     "static/media/thrifthub.jpg": "/static/media/thrifthub.191a4c6a472559b93fb4.jpg",
     "static/media/ventureahead.png": "/static/media/ventureahead.7adae8dc24963d07d574.png",
     "static/media/pigeonpost.png": "/static/media/pigeonpost.7c0c9a3ed0023c07c494.png",
@@ -16,15 +17,16 @@
     "static/media/carbon0.png": "/static/media/carbon0.579bda9afdf472d79f74.png",
     "static/media/drexel_cci.jpg": "/static/media/drexel_cci.a299b161739b35e75448.jpg",
     "static/media/deneyes.jpg": "/static/media/deneyes.61d87b671fb0831ae228.jpg",
+    "static/media/pet.gif": "/static/media/pet.eb45627077808206debf.gif",
     "static/media/soundshield.jpg": "/static/media/soundshield.5f489329b81ac4961cf8.jpg",
     "static/media/BMS.png": "/static/media/BMS.1cdd14b2f73194e463f4.png",
     "static/media/drexel_cci_research_logo.jpg": "/static/media/drexel_cci_research_logo.9a96bdd772171f8c75ad.jpg",
     "index.html": "/index.html",
-    "main.96eafc3c.css.map": "/static/css/main.96eafc3c.css.map",
-    "main.65d5addf.js.map": "/static/js/main.65d5addf.js.map"
+    "main.b026375b.css.map": "/static/css/main.b026375b.css.map",
+    "main.5e7d2cde.js.map": "/static/js/main.5e7d2cde.js.map"
   },
   "entrypoints": [
-    "static/css/main.96eafc3c.css",
-    "static/js/main.65d5addf.js"
+    "static/css/main.b026375b.css",
+    "static/js/main.5e7d2cde.js"
   ]
 }
