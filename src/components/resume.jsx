@@ -7,8 +7,8 @@ import bmsLogo from '../assets/BMS.png';
 import developForGoodLogo from '../assets/develop_for_good_logo.jpg';
 import drexelCCILogo from '../assets/drexel_cci.jpg';
 import kbraLogo from '../assets/kbra.jpg';
-// Add drawsim-pd.png (or .jpg) to src/assets and use: import drawsimImage from '../assets/drawsim-pd.png';
-const drawsimImage = null;
+import drawsimImage from '../assets/drawsim.jpg';
+import petGif from '../assets/pet.gif';
 
 const Resume = () => {
   return (
@@ -33,7 +33,7 @@ const Resume = () => {
           <GraduationCap className="icon" size={20} />
           <div className="content">
             <h3>Bachelors in Computer Science</h3>
-            <p className="subtitle">Drexel University, 2027</p>
+            <p className="subtitle">Drexel University<img src={petGif} alt="" className="resume-pet-gif" />,  2027 </p>
           </div>
           <img src={logo} alt="Drexel" className="company-logo-small" loading="lazy" />
         </div>
@@ -90,7 +90,7 @@ const Resume = () => {
           className="publication-card-link"
         >
           <div className="item clickable-item publication-item">
-            {drawsimImage && <img src={drawsimImage} alt="DrawSim-PD overview" className="publication-image" loading="lazy" />}
+            <img src={drawsimImage} alt="DrawSim-PD overview" className="publication-image" loading="lazy" />
             <div className="content">
               <h3 className="publication-title">
                 DrawSim-PD: Simulating Student Science Drawings to Support NGSS-Aligned Teacher
