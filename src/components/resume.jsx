@@ -9,6 +9,9 @@ import drexelCCILogo from '../assets/drexel_cci.jpg';
 import kbraLogo from '../assets/kbra.jpg';
 import drawsimImage from '../assets/drawsim.jpg';
 import petGif from '../assets/pet.gif';
+import awardsGif from '../assets/blaze.gif';
+import researcherGif from '../assets/party-parrot.gif';
+import experienceGif from '../assets/wave.gif';
 
 const Resume = () => {
   return (
@@ -33,7 +36,7 @@ const Resume = () => {
           <GraduationCap className="icon" size={20} />
           <div className="content">
             <h3>Bachelors in Computer Science</h3>
-            <p className="subtitle">Drexel University<img src={petGif} alt="" className="resume-pet-gif" />,  2027 </p>
+            <p className="subtitle">Drexel University<img src={petGif} alt="" className="resume-pet-gif" /> , 2027 </p>
           </div>
           <img src={logo} alt="Drexel" className="company-logo-small" loading="lazy" />
         </div>
@@ -109,7 +112,7 @@ const Resume = () => {
 
       {/* Experience Section */}
       <section className="resume-section">
-        <h2>experience</h2>
+        <h2>experience <img src={experienceGif} alt="" className="resume-pet-gif" /></h2>
         <div className="item">
           <Briefcase className="icon" size={20} />
           <div className="content">
@@ -121,7 +124,7 @@ const Resume = () => {
         <div className="item">
           <Briefcase className="icon" size={20} />
           <div className="content">
-            <h3>Undergraduate Researcher</h3>
+            <h3>Undergraduate Researcher <img src={researcherGif} alt="" className="resume-pet-gif" /></h3>
             <p className="subtitle">
               <a
                 href="https://vilab-group.com/"
@@ -166,7 +169,7 @@ const Resume = () => {
 
       {/* Awards Section */}
       <section className="resume-section">
-        <h2>awards & honors</h2>
+        <h2>awards & honors <img src={awardsGif} alt="" className="resume-pet-gif" /></h2>
         <div className="item">
           <Award className="icon" size={20} />
           <div className="content">

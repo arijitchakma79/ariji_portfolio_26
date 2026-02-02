@@ -275,7 +275,14 @@ body {
   color: var(--text-primary);
 }
 
-/* Tablet Styles */
+/* Tablet (e.g. iPad) */
+@media (max-width: 1024px) {
+  .main-content {
+    padding: 1.75rem 1.5rem;
+  }
+}
+
+/* Small tablet / narrow viewport */
 @media (max-width: 768px) {
   .sidebar {
     width: var(--sidebar-mobile-width);
@@ -286,7 +293,7 @@ body {
     margin-left: var(--sidebar-mobile-width);
     width: calc(100% - var(--sidebar-mobile-width));
     max-width: calc(100% - var(--sidebar-mobile-width));
-    padding: 1.5rem;
+    padding: 1.5rem 1.25rem;
   }
 
   .nav-link span {
