@@ -87,7 +87,7 @@ const Resume = () => {
       <section className="resume-section">
         <h2>publications</h2>
         <a
-          href="/drawsim-pd.pdf"
+          href="https://arxiv.org/abs/2602.01578"
           target="_blank"
           rel="noopener noreferrer"
           className="publication-card-link"
@@ -103,7 +103,7 @@ const Resume = () => {
                 Arijit Chakma, Peng He, Tingting Li, Tiffany D. Do, and Feng Liu.
               </p>
               <div className="publication-link">
-                <span>View Paper</span>
+                <span>PrePrint</span>
               </div>
             </div>
           </div>
