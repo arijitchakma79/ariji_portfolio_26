@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c3ae8b9b.css",
-    "main.js": "/static/js/main.c0d9cce9.js",
+    "main.js": "/static/js/main.2e20487e.js",
     "static/media/gojo.png": "/static/media/gojo.a0f491e7095df2cbf16a.png",
     "static/media/collegebuddy.png": "/static/media/collegebuddy.f6a5f630a5758cd888a4.png",
     "static/media/profile_pic.jpg": "/static/media/profile_pic.926e4cb62da9a14977c0.jpg",
@@ -26,10 +26,10 @@
     "static/media/drexel_cci_research_logo.jpg": "/static/media/drexel_cci_research_logo.9a96bdd772171f8c75ad.jpg",
     "index.html": "/index.html",
     "main.c3ae8b9b.css.map": "/static/css/main.c3ae8b9b.css.map",
-    "main.c0d9cce9.js.map": "/static/js/main.c0d9cce9.js.map"
+    "main.2e20487e.js.map": "/static/js/main.2e20487e.js.map"
   },
   "entrypoints": [
     "static/css/main.c3ae8b9b.css",
-    "static/js/main.c0d9cce9.js"
+    "static/js/main.2e20487e.js"
   ]
 }
