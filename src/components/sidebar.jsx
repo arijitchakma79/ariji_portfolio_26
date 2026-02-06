@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
-import { Home, FileText, Boxes, Palette, Sun, Moon, Instagram, Linkedin, Github, Twitter, Menu, X, Droplets, Check } from 'lucide-react';
+import { Home, FileText, Boxes, Palette, Sun, Moon, Instagram, Linkedin, Github, Twitter, Menu, X, Droplets, Check, GraduationCap } from 'lucide-react';
 import { useTheme, ACCENT_OPTIONS } from '../contexts/ThemeContext';
 import profileImg from '../assets/profile_pic.jpg';
 import '../styles/sidebar.css';
@@ -20,9 +20,10 @@ const Sidebar = () => {
     ];
 
     const socialLinks = [
-        { icon: <Instagram size={20} />, url: 'https://www.instagram.com/80asfluffshi/', label: 'Instagram' },
+        { icon: <GraduationCap size={20} />, url: 'https://scholar.google.com/citations?hl=en&authuser=7&user=ue5rhwoAAAAJ', label: 'Google Scholar' },
         { icon: <Linkedin size={20} />, url: 'https://www.linkedin.com/in/arijitchakma/', label: 'LinkedIn' },
         { icon: <Github size={20} />, url: 'https://github.com/arijitchakma79/', label: 'Github' },
+        { icon: <Instagram size={20} />, url: 'https://www.instagram.com/arigonn79/', label: 'Instagram' },
         { icon: <Twitter size={20} />, url: 'https://x.com/arigon79', label: 'X (Twitter)' }
     ];
 
