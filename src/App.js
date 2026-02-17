@@ -23,11 +23,13 @@ const App = () => {
       <Router>
         <div className="app">
           <Sidebar />
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/hobbies" element={<HobbiesPage />} />
-          </Routes>
-          <Footer />
+          <div className="page-shell">
+            <Routes>
+              <Route path="/" element={<MainPage />} />
+              <Route path="/hobbies" element={<HobbiesPage />} />
+            </Routes>
+            <Footer />
+          </div>
         </div>
       </Router>
     </ThemeProvider>

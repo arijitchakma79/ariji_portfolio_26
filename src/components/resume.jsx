@@ -25,7 +25,7 @@ const Resume = () => {
           className="resume-button"
         >
           <FileText size={20} />
-          <span>View</span>
+          <span>view</span>
         </a>
       </div>
 
@@ -35,7 +35,7 @@ const Resume = () => {
         <div className="item">
           <GraduationCap className="icon" size={20} />
           <div className="content">
-            <h3>Bachelors in Computer Science</h3>
+            <h3>bachelors in computer science</h3>
             <p className="subtitle">Drexel University<img src={petGif} alt="" className="resume-pet-gif" /> , 2027 </p>
           </div>
           <img src={logo} alt="Drexel" className="company-logo-small" loading="lazy" />
@@ -49,35 +49,35 @@ const Resume = () => {
         <div className="item">
           <BookOpen className="icon" size={20} />
           <div className="content">
-            <h3>Computational Photography (CS435)</h3>
+            <h3>computational photography (CS435)</h3>
             <p className="subtitle">Drexel University</p>
           </div>
         </div>
         <div className="item">
           <BookOpen className="icon" size={20} />
           <div className="content">
-            <h3>Deep Learning (CS615)*</h3>
+            <h3>deep learning (CS615)*</h3>
             <p className="subtitle">Drexel University</p>
           </div>
         </div>
         <div className="item">
           <BookOpen className="icon" size={20} />
           <div className="content">
-            <h3>Augmented Programming (CST480)</h3>
+            <h3>augmented programming (CST480)</h3>
             <p className="subtitle">Drexel University</p>
           </div>
         </div>
         <div className="item">
           <BookOpen className="icon" size={20} />
           <div className="content">
-            <h3>Machine Learning (CS383)</h3>
+            <h3>machine learning (CS383)</h3>
             <p className="subtitle">Drexel University</p>
           </div>
         </div>
         <div className="item">
           <BookOpen className="icon" size={20} />
           <div className="content">
-            <h3>Optimization Theory (MATH305)</h3>
+            <h3>optimization theory (MATH305)</h3>
             <p className="subtitle">Drexel University</p>
           </div>
         </div>
@@ -96,14 +96,14 @@ const Resume = () => {
             <img src={drawsimImage} alt="DrawSim-PD overview" className="publication-image" loading="lazy" />
             <div className="content">
               <h3 className="publication-title">
-                DrawSim-PD: Simulating Student Science Drawings to Support NGSS-Aligned Teacher
-                Diagnostic Reasoning
+                drawsim-pd: simulating student science drawings to support NGSS-aligned teacher
+                diagnostic reasoning
               </h3>
               <p className="subtitle">
                 Arijit Chakma, Peng He, Tingting Li, Tiffany D. Do, and Feng Liu.
               </p>
               <div className="publication-link">
-                <span>PrePrint</span>
+                <span>preprint</span>
               </div>
             </div>
           </div>
@@ -112,11 +112,11 @@ const Resume = () => {
 
       {/* Experience Section */}
       <section className="resume-section">
-        <h2>experience <img src={experienceGif} alt="" className="resume-pet-gif" /></h2>
+        <h2>experience</h2>
         <div className="item">
           <Briefcase className="icon" size={20} />
           <div className="content">
-            <h3>Incoming Software Engineer Intern</h3>
+            <h3>incoming software engineer intern</h3>
             <p className="subtitle">KBRA, April 2026 -  September 2026</p>
           </div>
           <img src={kbraLogo} alt="KBRA" className="company-logo-small" loading="lazy" />
@@ -124,7 +124,7 @@ const Resume = () => {
         <div className="item">
           <Briefcase className="icon" size={20} />
           <div className="content">
-            <h3>Undergraduate Researcher <img src={researcherGif} alt="" className="resume-pet-gif" /></h3>
+            <h3>undergraduate researcher</h3>
             <p className="subtitle">
               <a
                 href="https://vilab-group.com/"
@@ -142,7 +142,7 @@ const Resume = () => {
         <div className="item">
           <Briefcase className="icon" size={20} />
           <div className="content">
-            <h3>Course Assistant</h3>
+            <h3>course assistant</h3>
             <p className="subtitle">
               Drexel University College of Computing & Informatics, September 2025 -  Present
             </p>
@@ -152,7 +152,7 @@ const Resume = () => {
         <div className="item">
           <Briefcase className="icon" size={20} />
           <div className="content">
-            <h3>Software Engineer Intern</h3>
+            <h3>software engineer intern</h3>
             <p className="subtitle">Bristol Myers Squibb, April 2024 - September 2024</p>
           </div>
           <img src={bmsLogo} alt="Bristol Myers Squibb" className="company-logo" />
@@ -160,7 +160,7 @@ const Resume = () => {
         <div className="item">
           <Briefcase className="icon" size={20} />
           <div className="content">
-            <h3>Software Engineer</h3>
+            <h3>software engineer</h3>
             <p className="subtitle">Develop For Good, May 2024 - August 2024</p>
           </div>
           <img src={developForGoodLogo} alt="Develop For Good" className="company-logo-small" loading="lazy" />
@@ -173,63 +173,63 @@ const Resume = () => {
         <div className="item">
           <Award className="icon" size={20} />
           <div className="content">
-            <h3>Best Social Impact Hack</h3>
-            <p className="subtitle">DragonHacks 2025 @ (Drexel University)</p>
+            <h3>best social impact hack</h3>
+            <p className="subtitle">dragonhacks 2025 @ (Drexel University)</p>
           </div>
         </div>
         <div className="item">
           <Award className="icon" size={20} />
           <div className="content">
-            <h3>Beginner Quantum Computing Track - 2nd Place</h3>
-            <p className="subtitle">Bitcamps 2025 @ (University of Maryland, College Park)</p>
+            <h3>beginner quantum computing track - 2nd place</h3>
+            <p className="subtitle">bitcamps 2025 @ (University of Maryland, College Park)</p>
           </div>
         </div>
         <div className="item">
           <Award className="icon" size={20} />
           <div className="content">
-            <h3>Best Overall First</h3>
-            <p className="subtitle">PennApps 2024 @ (University of Pennsylvania)</p>
+            <h3>best overall first</h3>
+            <p className="subtitle">pennapps 2024 @ (University of Pennsylvania)</p>
           </div>
         </div>
         <div className="item">
           <Award className="icon" size={20} />
           <div className="content">
-            <h3>General Prize Overall Second</h3>
-            <p className="subtitle">HopHacks 2024 @ (John Hopkins University)</p>
+            <h3>general prize overall second</h3>
+            <p className="subtitle">hophacks 2024 @ (John Hopkins University)</p>
           </div>
         </div>
         <div className="item">
           <Award className="icon" size={20} />
           <div className="content">
-            <h3>Bloomberg Philanthropic Hack - 3rd Prize</h3>
-            <p className="subtitle">HopHacks 2024 @ (John Hopkins University)</p>
+            <h3>bloomberg philanthropic hack - 3rd prize</h3>
+            <p className="subtitle">hophacks 2024 @ (John Hopkins University)</p>
           </div>
         </div>
         <div className="item">
           <Award className="icon" size={20} />
           <div className="content">
-            <h3>Best Beginner Project</h3>
-            <p className="subtitle">DevFest 2025 @ (Columbia University)</p>
+            <h3>best beginner project</h3>
+            <p className="subtitle">devfest 2025 @ (Columbia University)</p>
           </div>
         </div>
         <div className="item">
           <Award className="icon" size={20} />
           <div className="content">
-            <h3>Best Interactive and Multimedia Track Winner</h3>
-            <p className="subtitle">DragonHacks 2024 @ (Drexel University)</p>
+            <h3>best interactive and multimedia track winner</h3>
+            <p className="subtitle">dragonhacks 2024 @ (Drexel University)</p>
           </div>
         </div>
         <div className="item">
           <Award className="icon" size={20} />
           <div className="content">
-            <h3>Deans List</h3>
-            <p className="subtitle">Awarded for GPA over 3.70 (All Quarters)</p>
+            <h3>deans list</h3>
+            <p className="subtitle">awarded for GPA over 3.70 (all quarters)</p>
           </div>
         </div>
         <div className="item">
           <Award className="icon" size={20} />
           <div className="content">
-            <h3>Drexel Global Scholarship</h3>
+            <h3>drexel global scholarship</h3>
             <p className="subtitle">
               1 out of 13 international students who were awarded this prestigious scholarship in
               2022

@@ -11,105 +11,115 @@ import thrifthub from '../assets/thrifthub.jpg';
 import ventureahead from '../assets/ventureahead.png';
 import woundwatch from '../assets/woundWatch.png';
 import collegebuddy from '../assets/collegebuddy.png';
-import carbon0 from '../assets/carbon0.png'
+import carbon0 from '../assets/carbon0.jpg';
+import tickermaster from '../assets/tickermaster.jpg';
 
 const Projects = () => {
   const projects = [
     {
-      title: 'Carbon0',
+      title: 'tickermaster',
       description:
-        'A Chrome extension that empowers online shoppers to make eco-conscious choices by analyzing product carbon footprints in real time and suggesting greener alternatives.',
-      category: 'Technical',
+        'a sandbox of financial AI agents that lets you test strategies, learn trading fundamentals, and understand sentiment-driven moves before placing real orders. features live research with market data and social sentiment, multi-agent trading simulations, and watchlist tracking with AI broker support.',
+      category: 'technical',
+      image: tickermaster,
+      icon: <Globe size={20} />,
+      link: 'https://devpost.com/software/tickermaster',
+    },
+    {
+      title: 'carbon0',
+      description:
+        'a chrome extension that empowers online shoppers to make eco-conscious choices by analyzing product carbon footprints in real time and suggesting greener alternatives.',
+      category: 'technical',
       image: carbon0,
       icon: <Globe size={20} />,
       link: 'https://devpost.com/software/carbon0-0brfc1',
     },
     {
-      title: 'CollegeBuddy',
+      title: 'collegebuddy',
       description:
-        'Your all-in-one platform for campus connections, organizations, and events. College Buddy helps students discover and join campus organizations, stay connected with events, and build their campus community.',
-      category: 'Technical',
+        'your all-in-one platform for campus connections, organizations, and events. college buddy helps students discover and join campus organizations, stay connected with events, and build their campus community.',
+      category: 'technical',
       image: collegebuddy,
       icon: <Globe size={20} />,
       link: 'https://github.com/arijitchakma79/CollegeBuddy',
     },
     {
-      title: 'WoundWatch',
+      title: 'woundwatch',
       description:
-        'An AI-powered app to reconstruct 3D wound models from 2D images using depth estimation and segmentation, supporting real-time clinical analysis and remote healthcare for patients.',
-      category: 'Technical',
+        'an AI-powered app to reconstruct 3D wound models from 2D images using depth estimation and segmentation, supporting real-time clinical analysis and remote healthcare for patients.',
+      category: 'technical',
       image: woundwatch,
       icon: <Globe size={20} />,
       link: 'https://devpost.com/software/deepcare-ai',
     },
     {
-      title: 'VentureAhead.AI',
+      title: 'ventureahead.ai',
       description:
-        'An AI-powered multi-agent platform that streamlines business and product ideation, market research, strategic analysis, and future outcome simulation to help entrepreneurs and organizations make data-driven decisions.',
-      category: 'Technical',
+        'an AI-powered multi-agent platform that streamlines business and product ideation, market research, strategic analysis, and future outcome simulation to help entrepreneurs and organizations make data-driven decisions.',
+      category: 'technical',
       image: ventureahead,
       icon: <Globe size={20} />,
       link: 'https://github.com/arijitchakma79/PhillyCodefest25',
     },
     {
-      title: 'SkyHigh',
+      title: 'skyhigh',
       description:
-        'An IoT Frisbee equipped with multi-agent AI systems capable of scanning critical areas during search and rescue missions and providing helpful inspections of the area.',
-      category: 'Technical',
+        'an IoT frisbee equipped with multi-agent AI systems capable of scanning critical areas during search and rescue missions and providing helpful inspections of the area.',
+      category: 'technical',
       image: skyhigh,
       icon: <Globe size={20} />,
       link: 'https://devpost.com/software/skyhigh-hf13ec',
     },
     {
-      title: 'PigeonPost',
+      title: 'pigeonpost',
       description:
-        'AI system that processes live lecture audio for instant knowledge retrieval, automatically generates diverse study content, and drives engagement through gamified learning metrics.',
-      category: 'Technical',
+        'ai system that processes live lecture audio for instant knowledge retrieval, automatically generates diverse study content, and drives engagement through gamified learning metrics.',
+      category: 'technical',
       image: pigeonpost,
       icon: <Globe size={20} />,
       link: 'https://dorahacks.io/buidl/19412',
     },
     {
-      title: 'DenEyes',
+      title: 'deneyes',
       description:
-        'Robot to detect early signs of ADHD using computer vision and reinforcement learning.',
-      category: 'Technical',
+        'robot to detect early signs of ADHD using computer vision and reinforcement learning.',
+      category: 'technical',
       image: deneyes,
       icon: <Globe size={20} />,
       link: 'https://devpost.com/software/deneyes',
     },
     {
-      title: 'SoundShield',
+      title: 'soundshield',
       description:
-        'A smart headphone device that reduces unwanted noise while keeping important sounds like speech and warns users when someone is behind them.',
-      category: 'Technical',
+        'a smart headphone device that reduces unwanted noise while keeping important sounds like speech and warns users when someone is behind them.',
+      category: 'technical',
       image: soundshield,
       icon: <Globe size={20} />,
       link: 'https://devpost.com/software/soundsheild',
     },
     {
-      title: 'Visual-ED',
+      title: 'visual-ed',
       description:
-        'AI-powered eye-tracking system that helps people with mobility disabilities communicate in educational settings by detecting eye movements to answer questions and interact with their surroundings.',
-      category: 'Technical',
+        'ai-powered eye-tracking system that helps people with mobility disabilities communicate in educational settings by detecting eye movements to answer questions and interact with their surroundings.',
+      category: 'technical',
       image: visualed,
       icon: <Globe size={20} />,
       link: 'https://devpost.com/software/visual-ed',
     },
     {
-      title: 'Scout',
+      title: 'scout',
       description:
-        'Autonomous campus security robot that patrols autonomously, detects calls for help, and shares its location with security teams in real time through a mobile app.',
-      category: 'Technical',
+        'autonomous campus security robot that patrols autonomously, detects calls for help, and shares its location with security teams in real time through a mobile app.',
+      category: 'technical',
       image: scout,
       icon: <Globe size={20} />,
       link: 'https://devpost.com/software/scout-campus-security',
     },
     {
-      title: 'ThirftHub',
+      title: 'thrifthub',
       description:
-        "Personal finance tracker that visualizes users' income, expenses, and spending patterns through interactive charts and graphs to help monitor financial habits.",
-      category: 'Technical',
+        "personal finance tracker that visualizes users' income, expenses, and spending patterns through interactive charts and graphs to help monitor financial habits.",
+      category: 'technical',
       image: thrifthub,
       icon: <Globe size={20} />,
       link: 'https://github.com/arijitchakma79/ThriftHub',

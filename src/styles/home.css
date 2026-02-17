@@ -1,296 +1,222 @@
-/* Home.css */
 .home {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px; /* consistent left/right margin inside main-content */
-    overflow-x: hidden;
-    background-color: var(--primary-bg);
-    transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-/* Intro Section */
 .intro {
-    margin-bottom: 60px;
-    width: 100%;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.intro-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.intro-hero {
+  position: static;
+  animation: fadeInUp 0.6s ease;
+}
+
+.intro-eyebrow {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  margin-bottom: 0.45rem;
+  font-weight: 600;
 }
 
 .intro-name {
-    font-size: 48px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: var(--text-primary);
-    word-wrap: break-word;
-    transition: color 0.3s ease;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  line-height: 1.2;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+  animation: fadeInUp 0.6s ease 0.1s both;
+  word-break: keep-all;
 }
 
 .intro-typewriter {
-    font-size: clamp(24px, 3vw, 32px);
-    font-weight: 500;
-    margin-bottom: 60px;
-    color: var(--text-primary);
-    word-wrap: break-word;
-    transition: color 0.3s ease;
-    min-height: 40px;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 600;
+  margin-bottom: 0;
+  color: var(--accent-red);
+  min-height: 1.75rem;
+  animation: fadeInUp 0.6s ease 0.15s both;
 }
 
 .typewriter-text {
-    display: inline-block;
+  display: inline-block;
 }
 
 .cursor {
-    display: inline-block;
-    margin-left: 2px;
-    animation: blink 1s infinite;
-    color: var(--accent-red);
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+  color: var(--accent-red);
 }
 
 @keyframes blink {
-    0%, 50% {
-        opacity: 1;
-    }
-    51%, 100% {
-        opacity: 0;
-    }
-}
-
-.subtitle {
-    font-size: 20px;
-    color: var(--text-secondary);
-    margin-bottom: 30px;
-    word-wrap: break-word;
-    transition: color 0.3s ease;
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
 
 .bio {
-    font-size: 16px;
-    line-height: 1.8;
-    color: var(--text-secondary);
-    max-width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 100%;
+  padding: 0;
+  animation: fadeInUp 0.6s ease 0.2s both;
+  word-break: normal;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
-.bio b {
-    color: var(--text-primary);
-    font-weight: 600;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .bio p {
-    margin-bottom: 20px;
-    max-width: 100%;
+  margin-bottom: 1rem;
 }
 
 .bio .email-paragraph {
-    margin-top: 32px;
-}
-
-.bio ul {
-    margin-left: 20px;
-    margin-top: 10px;
-    list-style-type: none;
-    padding-right: 15px;
-}
-
-.bio li {
-    margin-bottom: 10px;
-    position: relative;
-    word-wrap: break-word;
-}
-
-.bio li::before {
-    content: "•";
-    color: var(--accent-red);
-    position: absolute;
-    left: -15px;
-    font-size: 20px;
+  margin-top: 1rem;
 }
 
 .bio a,
 .email-link {
-    color: var(--text-primary);
-    text-decoration: none;
-    transition: color 0.3s ease;
-    word-wrap: break-word;
-    border-bottom: 1px solid transparent;
+  color: var(--accent-red);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .bio a:hover,
 .email-link:hover {
-    color: var(--accent-red);
-    border-bottom-color: var(--accent-red);
+  border-bottom-color: var(--accent-red);
 }
 
-/* Snapshots Section */
 .snapshots {
-    margin-top: 100px;
-    position: relative;
+  margin-top: 3rem;
+  position: relative;
+  animation: fadeInUp 0.6s ease 0.3s both;
 }
 
 .snapshots h2 {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 100px;
-    color: var(--text-primary);
-    transition: color 0.3s ease;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  text-transform: lowercase;
 }
 
 .scroll-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
 }
 
 .scroll-container::before,
 .scroll-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 50px;
-    z-index: 2;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 48px;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .scroll-container::before {
-    left: 0;
-    background: linear-gradient(to right, var(--primary-bg) 0%, transparent 100%);
-    opacity: 0.3;
+  left: 0;
+  background: linear-gradient(to right, var(--primary-bg), transparent);
 }
 
 .scroll-container::after {
-    right: 0;
-    background: linear-gradient(to left, var(--primary-bg) 0%, transparent 100%);
-    opacity: 0.3;
+  right: 0;
+  background: linear-gradient(to left, var(--primary-bg), transparent);
 }
 
 .image-grid {
-    display: flex;
-    gap: 24px;
-    padding: 20px 0;
-    width: max-content;
-    animation: scroll 30s linear infinite;
+  display: flex;
+  gap: 1rem;
+  padding: 4px 0;
+  width: max-content;
+  animation: scroll 30s linear infinite;
 }
 
 .image-grid:hover {
-    animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 .snapshot-img {
-    width: 600px;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
+  width: min(480px, 75vw);
+  height: clamp(200px, 32vw, 300px);
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: opacity 0.2s ease;
 }
 
 .snapshot-img:hover {
-    transform: scale(1.05);
+  opacity: 0.95;
 }
 
 @keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-/* Large Tablet styles */
-@media (max-width: 1024px) {
-    .snapshot-img {
-        width: 500px;
-        height: 350px;
-    }
-}
-
-/* Tablet styles */
 @media (max-width: 768px) {
-    .intro h1 {
-        font-size: 36px;
-    }
-
-    .subtitle {
-        font-size: 18px;
-    }
-
-    .bio {
-        font-size: 15px;
-    }
-
-    .snapshot-img {
-        width: 400px;
-        height: 300px;
-    }
-
-    .image-grid {
-        gap: 16px;
-    }
-
-    .snapshots h2 {
-        font-size: 28px;
-    }
+  .snapshot-img {
+    width: 300px;
+    height: 200px;
+  }
 }
 
-/* Mobile styles */
 @media (max-width: 480px) {
-    .home {
-        padding: 15px;
-        width: 100%;
-        overflow-x: hidden;
-    }
+  .intro-name {
+    font-size: 1.6rem;
+    line-height: 1.3;
+    word-break: normal;
+  }
 
-    .intro {
-        padding: 0 5px;
-    }
+  .intro-typewriter {
+    font-size: 1rem;
+  }
 
-    .intro h1 {
-        font-size: 32px;
-    }
+  .bio {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
 
-    .subtitle {
-        font-size: 16px;
-        margin-bottom: 20px;
-    }
+  .bio p {
+    margin-bottom: 0.85rem;
+  }
 
-    .bio {
-        font-size: 14px;
-        padding-right: 5px;
-    }
+  .snapshot-img {
+    width: 260px;
+    height: 170px;
+  }
 
-    .bio ul {
-        margin-left: 15px;
-        padding-right: 5px;
-    }
-
-    .bio li p {
-        padding-right: 5px;
-    }
-
-    .email-link {
-        word-break: break-all;
-    }
-
-    .snapshot-img {
-        width: 300px;
-        height: 200px;
-    }
-
-    .image-grid {
-        gap: 12px;
-    }
-
-    .snapshots {
-        margin-top: 40px;
-    }
-
-    .snapshots h2 {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-
-    .scroll-container::before,
-    .scroll-container::after {
-        width: 30px;
-    }
+  .scroll-container::before,
+  .scroll-container::after {
+    width: 24px;
+  }
 }
