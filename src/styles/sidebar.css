@@ -86,8 +86,8 @@
   transform: scale(1.08);
   border-color: var(--accent-red-soft);
   box-shadow:
-    0 0 0 3px rgba(255, 69, 0, 0.2),
-    0 8px 24px rgba(255, 69, 0, 0.3);
+    0 0 0 3px var(--accent-soft),
+    0 8px 24px rgba(167, 139, 250, 0.25);
 }
 
 .profile-image {

@@ -1,12 +1,13 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home, Hobbies } from './pages';
-import { Sidebar, Footer } from './components';
+import { Footer, Hero } from './components';
 import { ThemeProvider } from './contexts/ThemeContext';
 import './styles/App.css';
 
 const MainPage = () => (
   <main className="main-content">
+    <Hero />
     <Home />
   </main>
 );
@@ -21,8 +22,7 @@ const App = () => {
   return (
     <ThemeProvider>
       <Router>
-        <div className="app">
-          <Sidebar />
+        <div className="app app-ethereal">
           <div className="page-shell">
             <Routes>
               <Route path="/" element={<MainPage />} />

@@ -1,34 +1,42 @@
 :root {
-  --sidebar-width: 300px;
-  --accent-red: #ff4500;
-  --accent-red-soft: #ff6a33;
-  --focus-ring: rgba(255, 69, 0, 0.2);
+  --sidebar-width: 260px;
+  --accent: #a78bfa;
+  --accent-soft: rgba(167, 139, 250, 0.25);
+  --accent-red: #a78bfa;
+  --accent-red-soft: #c4b5fd;
+  --focus-ring: rgba(167, 139, 250, 0.35);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
 }
 
 [data-theme="dark"] {
-  --primary-bg: #030303;
-  --secondary-bg: #1a1a1b;
-  --sidebar-bg: #1a1a1b;
-  --text-primary: #d7dadc;
-  --text-secondary: #818384;
-  --accent-color: #818384;
-  --hover-color: #272729;
-  --border-color: #343536;
-  --card-bg: #1a1a1b;
-  --card-elevated: #272729;
+  --primary-bg: #050a19;
+  --secondary-bg: #0d1321;
+  --sidebar-bg: rgba(8, 14, 28, 0.95);
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --accent-color: #a78bfa;
+  --hover-color: rgba(167, 139, 250, 0.08);
+  --border-color: rgba(167, 139, 250, 0.15);
+  --card-bg: rgba(13, 19, 33, 0.8);
+  --card-elevated: rgba(15, 23, 42, 0.9);
 }
 
 [data-theme="light"] {
-  --primary-bg: #dae0e6;
-  --secondary-bg: #f6f7f8;
-  --sidebar-bg: #ffffff;
-  --text-primary: #1c1c1c;
-  --text-secondary: #7c7c7c;
-  --accent-color: #7c7c7c;
-  --hover-color: #f6f7f8;
-  --border-color: #ccc;
+  --primary-bg: #f8fafc;
+  --secondary-bg: #f1f5f9;
+  --sidebar-bg: rgba(255, 255, 255, 0.97);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent-color: #7c3aed;
+  --accent-red: #7c3aed;
+  --accent-red-soft: #8b5cf6;
+  --hover-color: rgba(124, 58, 237, 0.08);
+  --border-color: rgba(15, 23, 42, 0.1);
   --card-bg: #ffffff;
-  --card-elevated: #fcfcfc;
+  --card-elevated: #ffffff;
+  --focus-ring: rgba(124, 58, 237, 0.4);
 }
 
 * {
@@ -51,12 +59,14 @@ html {
 
 body {
   color: var(--text-primary);
-  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
   overflow-y: auto;
   transition: background-color 0.2s ease, color 0.2s ease;
   direction: ltr;
   background: var(--primary-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .app,
@@ -86,6 +96,19 @@ body {
   background: var(--text-secondary);
 }
 
+::selection {
+  background: var(--accent-soft);
+  color: var(--text-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 .app {
   min-height: 100vh;
 }
@@ -94,8 +117,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  margin-left: var(--sidebar-width);
-  width: calc(100% - var(--sidebar-width));
+  width: 100%;
   align-items: stretch;
 }
 
@@ -106,8 +128,12 @@ body {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem 2rem 2rem;
+  padding: 0;
   transition: all 0.2s ease;
+}
+
+.app-ethereal .main-content {
+  padding: 0;
 }
 
 .footer {
@@ -116,7 +142,8 @@ body {
 
 #about-section,
 #resume-section,
-#projects-section {
+#projects-section,
+#blogs-section {
   scroll-margin-top: 24px;
 }
 
@@ -128,14 +155,116 @@ body {
 .home-page-layout {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 4rem;
+  padding: 2.5rem 2rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Wrapper so profile can sit at top-left of about, touching hero */
+.about-with-profile {
+  position: relative;
+  overflow: visible;
+  margin-top: 0;
+}
+
+/* Profile at far left, crossing about boundary from top and left, touching gif */
+.profile-overlap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-overlap--left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(30%, -50%);
+  margin: 0;
+  padding: 0;
+}
+
+.profile-overlap .hero-profile {
+  margin-top: 0;
 }
 
 .content-section {
   width: 100%;
-  padding: 0;
+  padding: 2.5rem 2.75rem;
   display: block;
   animation: fadeIn 0.6s ease;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(167, 139, 250, 0.04);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, border-color 0.25s ease;
+}
+
+[data-theme="light"] .content-section {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(15, 23, 42, 0.06);
+}
+
+.content-section:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(167, 139, 250, 0.12);
+  border-color: rgba(167, 139, 250, 0.2);
+}
+
+[data-theme="light"] .content-section:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.08);
+  border-color: rgba(124, 58, 237, 0.15);
+}
+
+/* Card tilted; inner content counter-rotated so content stays straight */
+#about-section.content-section {
+  transform: rotate(-0.8deg);
+}
+
+#about-section.content-section:hover {
+  transform: rotate(-0.8deg) translateY(-4px) scale(1.02);
+}
+
+#about-section .content-section-inner {
+  transform: rotate(0.8deg);
+  padding-top: 9rem;
+  padding-left: 2.75rem;
+}
+
+#resume-section.content-section {
+  transform: rotate(1deg);
+}
+
+#resume-section.content-section:hover {
+  transform: rotate(1deg) translateY(-4px) scale(1.02);
+}
+
+#resume-section .content-section-inner {
+  transform: rotate(-1deg);
+}
+
+#projects-section.content-section {
+  transform: rotate(-0.5deg);
+}
+
+#projects-section.content-section:hover {
+  transform: rotate(-0.5deg) translateY(-4px) scale(1.02);
+}
+
+#projects-section .content-section-inner {
+  transform: rotate(0.5deg);
+}
+
+#blogs-section.content-section {
+  transform: rotate(0.4deg);
+}
+
+#blogs-section.content-section:hover {
+  transform: rotate(0.4deg) translateY(-4px) scale(1.02);
+}
+
+#blogs-section .content-section-inner {
+  transform: rotate(-0.4deg);
 }
 
 @keyframes fadeIn {
@@ -153,6 +282,13 @@ body {
   outline: 3px solid var(--focus-ring);
   outline-offset: 2px;
   border-radius: 8px;
+}
+
+@media (hover: none) {
+  :is(a, button):active {
+  -webkit-tap-highlight-color: rgba(167, 139, 250, 0.2);
+  tap-highlight-color: rgba(167, 139, 250, 0.2);
+  }
 }
 
 @media (max-width: 1100px) {
@@ -179,15 +315,20 @@ body {
   }
 
   .main-content {
-    padding: 4.5rem 1rem 1.5rem;
+    padding: 0;
     width: 100%;
     max-width: 100%;
   }
 
+  .home-page-layout {
+    padding: 2.5rem 1.25rem 2rem;
+  }
+
   #about-section,
   #resume-section,
-  #projects-section {
-    scroll-margin-top: 72px;
+  #projects-section,
+  #blogs-section {
+    scroll-margin-top: 24px;
   }
 
   #about-section,
@@ -197,19 +338,63 @@ body {
 }
 
 @media (max-width: 768px) {
-  .main-content {
-    padding: 4.5rem 0.75rem 1.5rem;
-    width: 100%;
+  /* On mobile / small tablets, center the profile image instead of left overlap */
+  .profile-overlap--left {
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  .home-page-layout {
+    padding: 2rem max(1rem, env(safe-area-inset-right)) 1.5rem max(1rem, env(safe-area-inset-left));
+  }
+
+  #about-section.content-section,
+  #resume-section.content-section,
+  #projects-section.content-section {
+    transform: none;
+  }
+
+  #about-section.content-section:hover,
+  #resume-section.content-section:hover,
+  #projects-section.content-section:hover {
+    transform: translateY(-2px);
+  }
+
+  #about-section .content-section-inner,
+  #resume-section .content-section-inner,
+  #projects-section .content-section-inner {
+    transform: none;
+  }
+
+  /* Make sure about text starts below the profile image on small screens */
+  #about-section .content-section-inner {
+    padding-top: 8.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .main-content {
-    padding: 4rem 0.75rem 1rem;
+    padding: 0;
     width: 100%;
     max-width: 100%;
   }
-  
+
+  .home-page-layout {
+    padding: 1.5rem max(1rem, env(safe-area-inset-right)) 1.5rem max(1rem, env(safe-area-inset-left));
+  }
+
+  .content-section {
+    padding: 1.75rem max(1.25rem, env(safe-area-inset-right)) 1.75rem max(1.25rem, env(safe-area-inset-left));
+  }
+
+  /* On very small screens, center text under the image with simpler padding */
+  #about-section .content-section-inner {
+    padding-top: 8.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
   .home,
   .intro,
   .intro-grid,

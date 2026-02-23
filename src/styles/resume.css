@@ -21,36 +21,57 @@
 .resume h1 {
   font-size: clamp(1.8rem, 3.5vw, 2.4rem);
   font-weight: 800;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   color: var(--text-primary);
   text-transform: lowercase;
+  letter-spacing: -0.02em;
   animation: fadeInUp 0.6s ease;
 }
 
+.resume h1 [aria-hidden] {
+  margin-left: 0.2em;
+}
+
+.resume-button [aria-hidden] {
+  margin-right: 0.25em;
+}
+
+.resume-subtitle {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: var(--text-secondary);
+  margin-bottom: 1.2rem;
+  text-transform: lowercase;
+  animation: fadeInUp 0.6s ease 0.1s both;
+}
+
 .resume-section {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border-color);
+  transition: border-color 0.2s ease;
+}
+
+.resume-section:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .resume-section h2 {
   font-size: clamp(1.15rem, 2.2vw, 1.35rem);
   font-weight: 700;
-  margin-bottom: 0.85rem;
-  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  color: var(--accent-red);
   text-transform: lowercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   position: relative;
-  padding-bottom: 0.4rem;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--accent-red);
+  border-radius: 0 2px 2px 0;
 }
 
-.resume-section h2::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 24px;
-  height: 2px;
-  border-radius: 1px;
-  background: var(--accent-red);
+.resume-section h2 [aria-hidden] {
+  margin-left: 0.2em;
 }
 
 .resume-section-note {
@@ -62,8 +83,8 @@
 .resume-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.9rem;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
   gap: 0.75rem;
 }
 
@@ -71,7 +92,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 0.9rem;
+  padding: 0.55rem 1.1rem;
   color: var(--accent-red);
   border: 1px solid var(--accent-red);
   border-radius: 999px;
@@ -80,12 +101,14 @@
   font-size: 0.9rem;
   text-transform: lowercase;
   background: transparent;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
 }
 
 .resume-button:hover {
   background: var(--accent-red);
   color: var(--primary-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(167, 139, 250, 0.25);
 }
 
 .item {
@@ -93,14 +116,24 @@
   align-items: center;
   margin-bottom: 0.75rem;
   gap: 1rem;
-  padding: 0;
+  padding: 1.25rem 1.5rem;
   width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.02);
   animation: fadeInUp 0.5s ease both;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.item:last-child {
+  margin-bottom: 0;
 }
 
 .item:hover {
-  transform: translateX(4px);
+  transform: translateY(-2px);
+  border-color: var(--accent-red-soft);
+  box-shadow: 0 4px 16px rgba(167, 139, 250, 0.08);
+  background: rgba(167, 139, 250, 0.04);
 }
 
 .item:nth-child(1) { animation-delay: 0.1s; }
@@ -112,16 +145,6 @@
 .item:nth-child(7) { animation-delay: 0.4s; }
 .item:nth-child(8) { animation-delay: 0.45s; }
 .item:nth-child(9) { animation-delay: 0.5s; }
-
-.icon {
-  color: var(--text-secondary);
-  min-width: 20px;
-  flex-shrink: 0;
-}
-
-.item:hover .icon {
-  color: var(--accent-red);
-}
 
 .content {
   flex: 1;
@@ -140,14 +163,6 @@
   color: var(--text-secondary);
   margin: 0;
   line-height: 1.5;
-}
-
-.resume-pet-gif {
-  display: inline-block;
-  height: 1.2em;
-  width: auto;
-  vertical-align: middle;
-  margin-left: 4px;
 }
 
 .resume-link {
@@ -185,6 +200,12 @@
   width: 100%;
 }
 
+.publication-card-link:hover .publication-item {
+  border-color: var(--accent-red-soft);
+  box-shadow: 0 6px 20px rgba(167, 139, 250, 0.12);
+  background: rgba(167, 139, 250, 0.05);
+}
+
 .clickable-item {
   cursor: pointer;
 }
@@ -198,9 +219,15 @@
   height: 90px;
   object-fit: cover;
   object-position: center top;
-  border-radius: 6px;
+  border-radius: 8px;
   flex-shrink: 0;
   border: 1px solid var(--border-color);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.publication-card-link:hover .publication-image {
+  border-color: var(--accent-red-soft);
+  box-shadow: 0 2px 12px rgba(167, 139, 250, 0.15);
 }
 
 .publication-card-link .publication-title,
@@ -214,6 +241,31 @@
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--accent-red);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: gap 0.2s ease;
+}
+
+.publication-card-link:hover .publication-link {
+  gap: 0.5rem;
+}
+
+[data-theme="light"] .resume .item {
+  background: rgba(15, 23, 42, 0.04);
+}
+
+[data-theme="light"] .resume .item:hover {
+  background: rgba(124, 58, 237, 0.06);
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.1);
+}
+
+[data-theme="light"] .resume-button:hover {
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.25);
+}
+
+[data-theme="light"] .publication-card-link:hover .publication-item {
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.12);
 }
 
 @media (max-width: 900px) {
@@ -234,8 +286,12 @@
     align-items: flex-start;
   }
 
+  .resume-section {
+    padding: 1rem 0;
+  }
+
   .item {
-    padding: 0;
+    padding: 1rem 1.1rem;
     gap: 0.75rem;
   }
 
@@ -253,18 +309,39 @@
 @media (max-width: 480px) {
   .resume-section {
     margin-bottom: 1.5rem;
+    padding: 0.85rem 0;
+  }
+
+  .resume-section h2 {
+    padding-left: 0.6rem;
+    font-size: 1.1rem;
+  }
+
+  .resume-header {
+    flex-wrap: wrap;
+  }
+
+  .resume-button {
+    min-height: 44px;
+    padding: 0.6rem 1rem;
   }
 
   .item {
     flex-direction: column;
     align-items: flex-start;
+    padding: 1.1rem 1rem;
   }
 
-  .company-logo,
-  .company-logo-small {
+  .item .content {
+    order: 2;
+  }
+
+  .item .company-logo,
+  .item .company-logo-small {
+    order: 1;
     width: 56px;
     height: 56px;
-    margin: 0.5rem 0 0;
+    margin: 0 0 0.5rem 0;
   }
 }
 

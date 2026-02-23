@@ -1,0 +1,372 @@
+.hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-teaser {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 10, 25, 0.65) 0%,
+    rgba(5, 10, 25, 0.82) 45%,
+    rgba(8, 14, 30, 0.97) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse 80% 80% at 100% 50%,
+    rgba(167, 139, 250, 0.22) 0%,
+    rgba(167, 139, 250, 0.06) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.hero-name {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3), 0 0 48px rgba(167, 139, 250, 0.2);
+  animation: hero-fade-up 0.8s ease-out both;
+}
+
+.hero-tagline {
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  color: #a78bfa;
+  font-weight: 500;
+  min-height: 1.75rem;
+  animation: hero-fade-up 0.8s ease-out 0.2s both;
+}
+
+/* Profile with fiery ring – bottom of hero */
+.hero-profile {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-profile-fire {
+  --profile-size: clamp(200px, 32vw, 270px);
+  /* Default: purple / magenta flame palette */
+  --flame-yellow: #e9d5ff;
+  --flame-amber: #c4b5fd;
+  --flame-orange: #a855f7;
+  --flame-deep: #7c3aed;
+  --flame-red: #4c1d95;
+  --flame-glow: rgba(167, 139, 250, 0.7);
+  --flame-glow-hot: rgba(129, 140, 248, 0.4);
+  position: relative;
+  isolation: isolate;
+  width: var(--profile-size);
+  height: var(--profile-size);
+  border-radius: 50%;
+  padding: 7px;
+  background: conic-gradient(
+    from 12deg,
+    var(--flame-yellow) 0%,
+    var(--flame-amber) 12%,
+    var(--flame-orange) 24%,
+    var(--flame-red) 38%,
+    var(--flame-deep) 52%,
+    var(--flame-amber) 68%,
+    var(--flame-yellow) 82%,
+    var(--flame-orange) 92%,
+    var(--flame-yellow) 100%
+  );
+  animation: hero-fire-flicker 2.2s ease-in-out infinite, hero-profile-in 0.9s ease-out 0.3s both;
+  box-shadow:
+    0 0 20px var(--flame-glow),
+    0 0 46px var(--flame-glow-hot),
+    inset 0 0 22px rgba(251, 191, 36, 0.16);
+  filter: saturate(1.1);
+}
+
+.hero-profile-fire::before,
+.hero-profile-fire::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Main visible flames – jagged ring that rotates */
+.hero-profile-fire::before {
+  inset: -10px;
+  background: conic-gradient(
+    from -8deg,
+    transparent 0%,
+    var(--flame-yellow) 4%,
+    var(--flame-orange) 8%,
+    var(--flame-deep) 12%,
+    transparent 16%,
+    transparent 20%,
+    var(--flame-amber) 24%,
+    var(--flame-orange) 28%,
+    var(--flame-deep) 32%,
+    transparent 38%,
+    transparent 42%,
+    var(--flame-yellow) 46%,
+    var(--flame-orange) 50%,
+    var(--flame-deep) 54%,
+    transparent 60%,
+    transparent 64%,
+    var(--flame-amber) 68%,
+    var(--flame-orange) 72%,
+    var(--flame-deep) 76%,
+    transparent 82%,
+    transparent 86%,
+    var(--flame-yellow) 92%,
+    var(--flame-orange) 96%,
+    var(--flame-deep) 100%
+  );
+  box-shadow:
+    0 0 18px var(--flame-glow),
+    0 0 32px var(--flame-glow-hot);
+  filter: blur(3px);
+  opacity: 0.85;
+  animation: flame-spin 7.5s linear infinite;
+}
+
+/* Hot inner glow + subtle licks */
+.hero-profile-fire::after {
+  inset: -8px;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.35), transparent 60%),
+    conic-gradient(
+      from 24deg,
+      var(--flame-yellow) 0%,
+      var(--flame-orange) 28%,
+      var(--flame-red) 54%,
+      var(--flame-amber) 78%,
+      var(--flame-yellow) 100%
+    );
+  filter: blur(9px);
+  opacity: 0.6;
+  mix-blend-mode: screen;
+  animation: flame-lick 2.1s ease-in-out infinite;
+}
+
+.hero-profile-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #0d1321;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes hero-fire-flicker {
+  0%, 100% {
+    box-shadow:
+      0 0 20px rgba(251, 191, 36, 0.5),
+      0 0 40px rgba(234, 88, 12, 0.3),
+      inset 0 0 20px rgba(251, 191, 36, 0.15);
+    filter: brightness(1) saturate(1.1);
+  }
+  50% {
+    box-shadow:
+      0 0 28px rgba(251, 191, 36, 0.7),
+      0 0 50px rgba(234, 88, 12, 0.45),
+      inset 0 0 24px rgba(251, 191, 36, 0.2);
+    filter: brightness(1.08) saturate(1.25);
+  }
+}
+
+@keyframes flame-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes flame-lick {
+  0%, 100% {
+    opacity: 0.54;
+    filter: blur(12px) brightness(1);
+    transform: scale(0.995);
+  }
+  50% {
+    opacity: 0.72;
+    filter: blur(14px) brightness(1.08);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes hero-profile-in {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-tagline .cursor {
+  animation: blink 1s infinite;
+  color: #a78bfa;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Light mode: softer overlay, dark text */
+[data-theme="light"] .hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 250, 252, 0.5) 0%,
+    rgba(241, 245, 249, 0.75) 50%,
+    rgba(248, 250, 252, 0.98) 100%
+  );
+}
+
+[data-theme="light"] .hero-bg::after {
+  background: radial-gradient(
+    ellipse 80% 80% at 100% 50%,
+    rgba(124, 58, 237, 0.18) 0%,
+    rgba(124, 58, 237, 0.05) 40%,
+    transparent 70%
+  );
+}
+
+[data-theme="light"] .hero-name {
+  color: #0f172a;
+  text-shadow: 0 0 40px rgba(124, 58, 237, 0.15);
+}
+
+[data-theme="light"] .hero-tagline,
+[data-theme="light"] .hero-tagline .cursor {
+  color: #7c3aed;
+}
+
+[data-theme="light"] .hero-profile-fire {
+  /* Lighter purple flame palette for light theme */
+  --flame-yellow: #f5f3ff;
+  --flame-amber: #ddd6fe;
+  --flame-orange: #c4b5fd;
+  --flame-deep: #a855f7;
+  --flame-red: #7c3aed;
+  --flame-glow: rgba(167, 139, 250, 0.55);
+  --flame-glow-hot: rgba(129, 140, 248, 0.35);
+  box-shadow:
+    0 0 18px var(--flame-glow),
+    0 0 38px var(--flame-glow-hot);
+}
+
+[data-theme="light"] .hero-profile-inner {
+  background: #f8fafc;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 50vh;
+  }
+
+  .hero-content {
+    padding: 2rem 1.25rem;
+    padding-left: max(1.25rem, env(safe-area-inset-left));
+    padding-right: max(1.25rem, env(safe-area-inset-right));
+  }
+
+  .hero-name {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .hero-tagline {
+    font-size: clamp(0.95rem, 4vw, 1.2rem);
+  }
+
+  .hero-profile {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 45vh;
+  }
+
+  .hero-content {
+    padding: 1.5rem 1rem;
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .hero-name {
+    font-size: clamp(1.75rem, 9vw, 2.5rem);
+    line-height: 1.15;
+  }
+
+  .hero-tagline {
+    font-size: 0.95rem;
+    min-height: 1.5rem;
+  }
+
+  .hero-profile {
+    margin-top: 1.25rem;
+  }
+
+  .hero-profile-fire {
+    --profile-size: clamp(170px, 30vw, 230px);
+  }
+}

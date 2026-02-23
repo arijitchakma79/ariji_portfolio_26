@@ -3,6 +3,8 @@ import Footer from "./footer";
 import About from "./about";
 import Resume from "./resume";
 import Projects from "./project";
+import Hero from "./Hero";
+import Navbar from "./Navbar";
 
 export {
     Sidebar,
@@ -10,4 +12,6 @@ export {
     About,
     Resume,
     Projects,
+    Hero,
+    Navbar,
 };

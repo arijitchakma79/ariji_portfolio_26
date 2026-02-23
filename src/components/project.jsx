@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, ExternalLink } from 'lucide-react';
+import { Globe } from 'lucide-react';
 import '../styles/projects.css';
 import deneyes from '../assets/deneyes.jpg';
 import scout from '../assets/scout.jpg';
@@ -128,9 +128,10 @@ const Projects = () => {
 
   return (
     <div className="projects">
-      <h1>projects</h1>
-      <p className="projects-subtitle">this includes my personal and group projects</p>
-
+      <div className="projects-header">
+        <h1>projects <span aria-hidden>🚀</span></h1>
+        <p className="projects-subtitle">this includes my personal and group projects</p>
+      </div>
       <div className="projects-grid">
         {projects.map((project, index) => (
           <a
@@ -152,7 +153,7 @@ const Projects = () => {
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <div className="project-link">
-                  <ExternalLink size={16} />
+                  <span aria-hidden>↗️</span>
                   <span>view project</span>
                 </div>
               </div>

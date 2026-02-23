@@ -18,6 +18,18 @@
   gap: 1.25rem;
 }
 
+.section-heading {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  color: var(--accent-red);
+  text-transform: lowercase;
+  margin-bottom: 0.25rem;
+}
+
+.section-heading [aria-hidden] {
+  margin-left: 0.2em;
+}
+
 .intro-hero {
   position: static;
   animation: fadeInUp 0.6s ease;
@@ -68,8 +80,8 @@
 }
 
 .bio {
-  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
-  line-height: 1.7;
+  font-size: clamp(1.05rem, 1.95vw, 1.2rem);
+  line-height: 1.75;
   color: var(--text-secondary);
   max-width: 100%;
   padding: 0;
@@ -94,6 +106,12 @@
   margin-bottom: 1rem;
 }
 
+.bio .dim-emoji {
+  display: inline;
+  font-style: normal;
+  vertical-align: -0.15em;
+}
+
 .bio .email-paragraph {
   margin-top: 1rem;
 }
@@ -109,6 +127,44 @@
 .bio a:hover,
 .email-link:hover {
   border-bottom-color: var(--accent-red);
+}
+
+.about-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem 0.75rem;
+  margin-top: 1rem;
+}
+
+.about-links a {
+  color: var(--accent-red);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: lowercase;
+  border: 1px solid var(--border-color);
+  background: var(--hover-color);
+  border-radius: 999px;
+  padding: 0.55rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s ease, border-color 0.2s ease;
+}
+
+.about-links a:hover {
+  border-color: var(--accent-red-soft);
+  background: rgba(167, 139, 250, 0.12);
+  transform: translateY(-1px);
+}
+
+.about-link-emoji {
+  width: 1.25em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
 }
 
 .snapshots {
@@ -184,6 +240,15 @@
 }
 
 @media (max-width: 768px) {
+  .about-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-links a {
+    font-size: 0.95rem;
+    padding: 0.55rem 0.7rem;
+  }
+
   .snapshot-img {
     width: 300px;
     height: 200px;
@@ -202,12 +267,21 @@
   }
 
   .bio {
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.6;
   }
 
   .bio p {
     margin-bottom: 0.85rem;
+  }
+
+  .about-links {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+
+  .about-links a {
+    justify-content: center;
   }
 
   .snapshot-img {
