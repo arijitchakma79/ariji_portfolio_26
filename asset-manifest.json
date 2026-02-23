@@ -1,36 +1,34 @@
 {
   "files": {
-    "main.css": "/static/css/main.fae84d42.css",
-    "main.js": "/static/js/main.29261d52.js",
+    "main.css": "/static/css/main.52f6764a.css",
+    "main.js": "/static/js/main.31bd951c.js",
     "static/media/gojo.png": "/static/media/gojo.a0f491e7095df2cbf16a.png",
     "static/media/collegebuddy.png": "/static/media/collegebuddy.f6a5f630a5758cd888a4.png",
     "static/media/drawsim.jpg": "/static/media/drawsim.f62cadf53978e1a5a547.jpg",
     "static/media/profile_pic.jpg": "/static/media/profile_pic.12049a7cbb8bebb03f28.jpg",
+    "static/media/teaser.gif": "/static/media/teaser.02b5e0aca4b3f46722cb.gif",
+    "static/media/woundWatch.png": "/static/media/woundWatch.2d36b7a559c9575156dd.png",
     "static/media/thrifthub.jpg": "/static/media/thrifthub.191a4c6a472559b93fb4.jpg",
     "static/media/ventureahead.png": "/static/media/ventureahead.7adae8dc24963d07d574.png",
+    "static/media/resume.pdf": "/static/media/resume.9bbb5e4a76ffddcd1b7c.pdf",
     "static/media/pigeonpost.png": "/static/media/pigeonpost.7c0c9a3ed0023c07c494.png",
     "static/media/skyhigh.jpg": "/static/media/skyhigh.e6a181ad2656e86b2e48.jpg",
     "static/media/visualed.jpg": "/static/media/visualed.80d8161ad770dbf28d5c.jpg",
     "static/media/scout.jpg": "/static/media/scout.4e81b00e0df90988d228.jpg",
-    "static/media/woundWatch.png": "/static/media/woundWatch.3f0a1ea67873a19cc24a.png",
     "static/media/carbon0.jpg": "/static/media/carbon0.9bd2d871cd22e93b3241.jpg",
     "static/media/drexel_logo.png": "/static/media/drexel_logo.5504f395f0e45642c0c2.png",
-    "static/media/blaze.gif": "/static/media/blaze.61fdc2d88e8fcf5baf15.gif",
     "static/media/drexel_cci.jpg": "/static/media/drexel_cci.a299b161739b35e75448.jpg",
     "static/media/tickermaster.jpg": "/static/media/tickermaster.ee946341cd9e7ec2a1a9.jpg",
-    "static/media/wave.gif": "/static/media/wave.359f853af26b32b30988.gif",
     "static/media/deneyes.jpg": "/static/media/deneyes.61d87b671fb0831ae228.jpg",
-    "static/media/pet.gif": "/static/media/pet.eb45627077808206debf.gif",
     "static/media/soundshield.jpg": "/static/media/soundshield.5f489329b81ac4961cf8.jpg",
-    "static/media/party-parrot.gif": "/static/media/party-parrot.61cbc85cd21491f31e4f.gif",
     "static/media/BMS.png": "/static/media/BMS.1cdd14b2f73194e463f4.png",
     "static/media/drexel_cci_research_logo.jpg": "/static/media/drexel_cci_research_logo.9a96bdd772171f8c75ad.jpg",
     "index.html": "/index.html",
-    "main.fae84d42.css.map": "/static/css/main.fae84d42.css.map",
-    "main.29261d52.js.map": "/static/js/main.29261d52.js.map"
+    "main.52f6764a.css.map": "/static/css/main.52f6764a.css.map",
+    "main.31bd951c.js.map": "/static/js/main.31bd951c.js.map"
   },
   "entrypoints": [
-    "static/css/main.fae84d42.css",
-    "static/js/main.29261d52.js"
+    "static/css/main.52f6764a.css",
+    "static/js/main.31bd951c.js"
   ]
 }
