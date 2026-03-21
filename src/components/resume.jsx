@@ -109,8 +109,10 @@ const Resume = () => {
         <h2>experience <span aria-hidden>💼</span></h2>
         <div className="item">
           <div className="content">
-            <h3>incoming software engineer intern</h3>
-            <p className="subtitle">KBRA, April 2026 -  September 2026</p>
+            <h3>software engineer intern</h3>
+            <p className="subtitle">
+              <a href="https://www.kbra.com/" target="_blank" rel="noopener noreferrer" className="resume-link">KBRA</a>, April 2026 – September 2026
+            </p>
           </div>
           <img src={kbraLogo} alt="KBRA" className="company-logo-small" loading="lazy" />
         </div>
@@ -143,14 +145,18 @@ const Resume = () => {
         <div className="item">
           <div className="content">
             <h3>software engineer intern</h3>
-            <p className="subtitle">Bristol Myers Squibb, April 2024 - September 2024</p>
+            <p className="subtitle">
+              <a href="https://www.bms.com/" target="_blank" rel="noopener noreferrer" className="resume-link">Bristol Myers Squibb</a>, April 2024 – September 2024
+            </p>
           </div>
           <img src={bmsLogo} alt="Bristol Myers Squibb" className="company-logo" />
         </div>
         <div className="item">
           <div className="content">
             <h3>software engineer</h3>
-            <p className="subtitle">Develop For Good, May 2024 - August 2024</p>
+            <p className="subtitle">
+              <a href="https://www.developforgood.org/" target="_blank" rel="noopener noreferrer" className="resume-link">Develop For Good</a>, May 2024 – August 2024
+            </p>
           </div>
           <img src={developForGoodLogo} alt="Develop For Good" className="company-logo-small" loading="lazy" />
         </div>

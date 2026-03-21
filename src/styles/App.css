@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
+
 :root {
   --sidebar-width: 260px;
   --accent: #a78bfa;
@@ -6,21 +8,26 @@
   --accent-red-soft: #c4b5fd;
   --focus-ring: rgba(167, 139, 250, 0.35);
   --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
 }
 
 [data-theme="dark"] {
   --primary-bg: #050a19;
-  --secondary-bg: #0d1321;
+  --secondary-bg: #0a1020;
   --sidebar-bg: rgba(8, 14, 28, 0.95);
   --text-primary: #e2e8f0;
-  --text-secondary: #94a3b8;
+  --text-secondary: #8899b4;
   --accent-color: #a78bfa;
   --hover-color: rgba(167, 139, 250, 0.08);
-  --border-color: rgba(167, 139, 250, 0.15);
-  --card-bg: rgba(13, 19, 33, 0.8);
-  --card-elevated: rgba(15, 23, 42, 0.9);
+  --border-color: rgba(167, 139, 250, 0.12);
+  --card-bg: rgba(10, 16, 32, 0.85);
+  --card-elevated: rgba(13, 20, 38, 0.9);
+  --glass-bg: rgba(10, 16, 32, 0.6);
+  --glass-border: rgba(167, 139, 250, 0.15);
+  --glow-primary: rgba(167, 139, 250, 0.15);
+  --glow-secondary: rgba(99, 102, 241, 0.1);
 }
 
 [data-theme="light"] {
@@ -37,6 +44,10 @@
   --card-bg: #ffffff;
   --card-elevated: #ffffff;
   --focus-ring: rgba(124, 58, 237, 0.4);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(124, 58, 237, 0.12);
+  --glow-primary: rgba(124, 58, 237, 0.08);
+  --glow-secondary: rgba(99, 102, 241, 0.06);
 }
 
 * {
@@ -62,7 +73,7 @@ body {
   font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
   overflow-y: auto;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   direction: ltr;
   background: var(--primary-bg);
   -webkit-font-smoothing: antialiased;
@@ -80,20 +91,15 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 0;
+  height: 0;
+  display: none;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--border-color);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-secondary);
+body,
+.desktop-sidebar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
 }
 
 ::selection {
@@ -155,9 +161,9 @@ body {
 .home-page-layout {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-  padding: 2.5rem 2rem 3rem;
-  max-width: 1200px;
+  gap: 2rem;
+  padding: 2.5rem 2rem 4rem;
+  max-width: 1100px;
   margin: 0 auto;
   width: 100%;
 }
@@ -169,7 +175,7 @@ body {
   margin-top: 0;
 }
 
-/* Profile at far left, crossing about boundary from top and left, touching gif */
+/* Profile positioning */
 .profile-overlap {
   position: relative;
   z-index: 2;
@@ -190,92 +196,154 @@ body {
   margin-top: 0;
 }
 
+/* — Content section cards — */
 .content-section {
   width: 100%;
   padding: 2.5rem 2.75rem;
   display: block;
-  animation: fadeIn 0.6s ease;
+  animation: sectionFadeIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(167, 139, 250, 0.04);
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, border-color 0.25s ease;
+  border-radius: var(--radius-xl);
+  box-shadow:
+    0 2px 16px rgba(0, 0, 0, 0.14),
+    0 0 0 1px rgba(167, 139, 250, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+}
+
+/* Shimmer line at top of each card */
+.content-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(167, 139, 250, 0.4),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.content-section:hover::before {
+  opacity: 1;
 }
 
 [data-theme="light"] .content-section {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(15, 23, 42, 0.06);
+  box-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.06),
+    0 4px 16px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(15, 23, 42, 0.06);
 }
 
 .content-section:hover {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(167, 139, 250, 0.12);
-  border-color: rgba(167, 139, 250, 0.2);
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.22),
+    0 0 0 1px rgba(167, 139, 250, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  border-color: rgba(167, 139, 250, 0.22);
 }
 
 [data-theme="light"] .content-section:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.08);
-  border-color: rgba(124, 58, 237, 0.15);
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(124, 58, 237, 0.14);
+  border-color: rgba(124, 58, 237, 0.18);
 }
 
-/* Card tilted; inner content counter-rotated so content stays straight */
+/* Subtle tilt effect per section */
 #about-section.content-section {
-  transform: rotate(-0.8deg);
+  transform: rotate(-0.6deg);
 }
-
 #about-section.content-section:hover {
-  transform: rotate(-0.8deg) translateY(-4px) scale(1.02);
+  transform: rotate(-0.6deg) translateY(-5px) scale(1.008);
 }
-
 #about-section .content-section-inner {
-  transform: rotate(0.8deg);
-  padding-top: 9rem;
+  transform: rotate(0.6deg);
+  padding-top: 3rem;
   padding-left: 2.75rem;
 }
 
 #resume-section.content-section {
-  transform: rotate(1deg);
+  transform: rotate(0.7deg);
 }
-
 #resume-section.content-section:hover {
-  transform: rotate(1deg) translateY(-4px) scale(1.02);
+  transform: rotate(0.7deg) translateY(-5px) scale(1.008);
 }
-
 #resume-section .content-section-inner {
-  transform: rotate(-1deg);
+  transform: rotate(-0.7deg);
 }
 
 #projects-section.content-section {
-  transform: rotate(-0.5deg);
+  transform: rotate(-0.4deg);
 }
-
 #projects-section.content-section:hover {
-  transform: rotate(-0.5deg) translateY(-4px) scale(1.02);
+  transform: rotate(-0.4deg) translateY(-5px) scale(1.008);
 }
-
 #projects-section .content-section-inner {
-  transform: rotate(0.5deg);
-}
-
-#blogs-section.content-section {
   transform: rotate(0.4deg);
 }
 
+#blogs-section.content-section {
+  transform: rotate(0.3deg);
+}
 #blogs-section.content-section:hover {
-  transform: rotate(0.4deg) translateY(-4px) scale(1.02);
+  transform: rotate(0.3deg) translateY(-5px) scale(1.008);
 }
-
 #blogs-section .content-section-inner {
-  transform: rotate(-0.4deg);
+  transform: rotate(-0.3deg);
 }
 
-@keyframes fadeIn {
+/* Section animation delays */
+#about-section  { animation-delay: 0.05s; }
+#resume-section { animation-delay: 0.1s; }
+#projects-section { animation-delay: 0.15s; }
+#blogs-section  { animation-delay: 0.2s; }
+
+@keyframes sectionFadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(28px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Override: keep the rotation when cards are done animating */
+#about-section.content-section    { animation-name: sectionFadeInA; }
+#resume-section.content-section   { animation-name: sectionFadeInB; }
+#projects-section.content-section { animation-name: sectionFadeInC; }
+#blogs-section.content-section    { animation-name: sectionFadeInD; }
+
+@keyframes sectionFadeInA {
+  from { opacity: 0; transform: rotate(-0.6deg) translateY(28px); }
+  to   { opacity: 1; transform: rotate(-0.6deg) translateY(0); }
+}
+@keyframes sectionFadeInB {
+  from { opacity: 0; transform: rotate(0.7deg) translateY(28px); }
+  to   { opacity: 1; transform: rotate(0.7deg) translateY(0); }
+}
+@keyframes sectionFadeInC {
+  from { opacity: 0; transform: rotate(-0.4deg) translateY(28px); }
+  to   { opacity: 1; transform: rotate(-0.4deg) translateY(0); }
+}
+@keyframes sectionFadeInD {
+  from { opacity: 0; transform: rotate(0.3deg) translateY(28px); }
+  to   { opacity: 1; transform: rotate(0.3deg) translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 :is(a, button, .nav-link, .project-card-link):focus-visible {
@@ -286,25 +354,14 @@ body {
 
 @media (hover: none) {
   :is(a, button):active {
-  -webkit-tap-highlight-color: rgba(167, 139, 250, 0.2);
-  tap-highlight-color: rgba(167, 139, 250, 0.2);
+    -webkit-tap-highlight-color: rgba(167, 139, 250, 0.2);
+    tap-highlight-color: rgba(167, 139, 250, 0.2);
   }
 }
 
 @media (max-width: 1100px) {
-  :root {
-    --sidebar-width: 280px;
-  }
-
-  .main-content {
-    padding: 1.5rem 1.5rem 2rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .main-content {
-    padding: 2rem 3rem 2.5rem;
-  }
+  :root { --sidebar-width: 280px; }
+  .main-content { padding: 0; }
 }
 
 @media (max-width: 900px) {
@@ -313,64 +370,51 @@ body {
     width: 100%;
     align-items: stretch;
   }
-
   .main-content {
     padding: 0;
     width: 100%;
     max-width: 100%;
   }
-
   .home-page-layout {
-    padding: 2.5rem 1.25rem 2rem;
-  }
-
-  #about-section,
-  #resume-section,
-  #projects-section,
-  #blogs-section {
-    scroll-margin-top: 24px;
-  }
-
-  #about-section,
-  #resume-section {
-    margin-bottom: 0;
+    gap: 1.75rem;
+    padding: 2rem 1.25rem 3rem;
   }
 }
 
 @media (max-width: 768px) {
-  /* On mobile / small tablets, center the profile image instead of left overlap */
   .profile-overlap--left {
     left: 50%;
     top: 0;
     transform: translate(-50%, -50%);
   }
-
   .home-page-layout {
-    padding: 2rem max(1rem, env(safe-area-inset-right)) 1.5rem max(1rem, env(safe-area-inset-left));
+    padding: 1.75rem max(1rem, env(safe-area-inset-right)) 2.5rem max(1rem, env(safe-area-inset-left));
   }
-
   #about-section.content-section,
   #resume-section.content-section,
-  #projects-section.content-section {
-    transform: none;
+  #projects-section.content-section,
+  #blogs-section.content-section {
+    transform: none !important;
   }
-
   #about-section.content-section:hover,
   #resume-section.content-section:hover,
-  #projects-section.content-section:hover {
-    transform: translateY(-2px);
+  #projects-section.content-section:hover,
+  #blogs-section.content-section:hover {
+    transform: translateY(-3px) !important;
   }
-
   #about-section .content-section-inner,
   #resume-section .content-section-inner,
-  #projects-section .content-section-inner {
+  #projects-section .content-section-inner,
+  #blogs-section .content-section-inner {
     transform: none;
   }
-
-  /* Make sure about text starts below the profile image on small screens */
   #about-section .content-section-inner {
-    padding-top: 8.5rem;
+    padding-top: 3rem;
   }
+  #about-section.content-section  { animation-name: sectionFadeIn; }
+  #resume-section.content-section  { animation-name: sectionFadeIn; }
+  #projects-section.content-section { animation-name: sectionFadeIn; }
+  #blogs-section.content-section  { animation-name: sectionFadeIn; }
 }
 
 @media (max-width: 480px) {
@@ -379,22 +423,19 @@ body {
     width: 100%;
     max-width: 100%;
   }
-
   .home-page-layout {
-    padding: 1.5rem max(1rem, env(safe-area-inset-right)) 1.5rem max(1rem, env(safe-area-inset-left));
+    gap: 1.5rem;
+    padding: 1.5rem max(1rem, env(safe-area-inset-right)) 2rem max(1rem, env(safe-area-inset-left));
   }
-
   .content-section {
     padding: 1.75rem max(1.25rem, env(safe-area-inset-right)) 1.75rem max(1.25rem, env(safe-area-inset-left));
+    border-radius: var(--radius-lg);
   }
-
-  /* On very small screens, center text under the image with simpler padding */
   #about-section .content-section-inner {
-    padding-top: 8.5rem;
+    padding-top: 3rem;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
-
   .home,
   .intro,
   .intro-grid,

@@ -16,6 +16,12 @@ const Hero = () => {
       <div className="hero-bg">
         <img src={teaserGif} alt="" className="hero-teaser" aria-hidden />
         <div className="hero-overlay" />
+        {/* Floating particles */}
+        <div className="hero-particles" aria-hidden>
+          {[...Array(8)].map((_, i) => (
+            <div key={i} className="hero-particle" />
+          ))}
+        </div>
       </div>
       <Navbar />
       <div className="hero-content">

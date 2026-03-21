@@ -8,12 +8,17 @@ const About = () => {
         <div className="intro-grid">
           <div className="bio">
             <p>
-              I’m a junior computer science student at Drexel University. my research focuses on
-              <span className="dim-emoji" aria-label="2D">2️⃣</span>D / <span className="dim-emoji" aria-label="3D">3️⃣</span>D / <span className="dim-emoji" aria-label="4D">4️⃣</span>D generation, applied LLMs, and human-computer interaction (HCI), working under
-              professor <a href="https://liufeng2915.github.io/" target="_blank" rel="noopener noreferrer" className="email-link"> Feng Liu</a>.
+              I'm a junior computer science student at Drexel University. my research focuses on{' '}
+              <span className="dim-emoji" aria-label="2D">2️⃣</span>D /{' '}
+              <span className="dim-emoji" aria-label="3D">3️⃣</span>D /{' '}
+              <span className="dim-emoji" aria-label="4D">4️⃣</span>D generation, applied LLMs, and
+              human-computer interaction (HCI), working under professor{' '}
+              <a href="https://liufeng2915.github.io/" target="_blank" rel="noopener noreferrer" className="email-link">
+                Feng Liu
+              </a>.
             </p>
             <p>
-              I’m also a long-time developer with experience in full-stack and AI-powered applications,
+              I'm also a long-time developer with experience in full-stack and AI-powered applications,
               plus IoT and AR/VR.
             </p>
             <p>
@@ -23,6 +28,11 @@ const About = () => {
             <p>
               i love hackathons and have attended around 15 at Stanford, MIT, UPenn, Columbia, Hopkins,
               and more.
+            </p>
+            <p>
+              outside of academics, i hit the gym daily and enjoy reading ancient european history and
+              philosophy. i recently got into travelling and hiking — hoping to visit at least 3 countries
+              this year.
             </p>
             <p className="email-paragraph">feel free to reach out.</p>
             <div className="about-links">
@@ -41,4 +51,3 @@ const About = () => {
 };
 
 export default About;
-
