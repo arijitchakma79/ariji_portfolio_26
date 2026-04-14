@@ -13,11 +13,21 @@ import woundwatch from '../assets/woundWatch.png';
 import collegebuddy from '../assets/collegebuddy.png';
 import carbon0 from '../assets/carbon0.jpg';
 import tickermaster from '../assets/tickermaster.jpg';
+import phillynet from '../assets/phillynet.png';
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
 
   const projects = [
+    {
+      title: 'phillynet nexus',
+      description:
+        'an ai-powered dashboard that predicts where connectivity complaints will spike across philadelphia\'s 53 zip codes. combines fcc broadband data, ookla speed measurements, census demographics, and 311 complaint history to give internet providers and city planners a heads-up.',
+      image: phillynet,
+      icon: <Globe size={20} />,
+      link: 'https://arijitchakma79.github.io/phillynet-nexus-page/',
+      featured: true,
+    },
     {
       title: 'tickermaster',
       description:
